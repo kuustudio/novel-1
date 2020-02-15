@@ -1,0 +1,62 @@
+{extend name="pub/base" /}
+{block name="title"}
+<title>题材编辑</title>
+{/block}
+
+{block name="body"}
+<article class="clearfix pd-20">
+    <form class="form form-horizontal" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="{$cate.id}" name="id">
+        <div class="row clearfix">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>题材名：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$cate.cate_name}" name="cate_name">
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span class="select-box" style="width:150px;">
+                    <select class="select" name="gender" size="1">
+                        <option value="1" {$cate.gender==1?"selected":""}>男频</option>
+                         <option value="2" {$cate.gender==2?"selected":""}>女频</option>
+                    </select>
+				</span>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+    $(function () {
+        $("form").validate({
+            rules: {
+                cate_name: {
+                    required: true
+                }
+            },
+            onkeyup: false,
+            focusCleanup: false,
+            submitHandler: function(form) {
+                $.ajax({
+                    url:"{:url('edit')}",
+                    type:'post',
+                    data:$('form').serialize(),
+                    success(res) {
+                        subResHandle(res)
+                    }
+                })
+            }
+        });
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+{/block}

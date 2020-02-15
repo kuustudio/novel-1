@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    {block name="seo"}{/block}
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <link href="https://lib.baomitu.com/layer/3.1.1/theme/default/layer.css" rel="stylesheet">
+<body style="">
+<div class="index-header" id="topback">
+    <div class="header-bg">
+        <div class="logozone">
+
+            <!--搜索部分 start-->
+            <div class="wrap1200 logo">
+                <a href="http://demo.kyxscms.com/" class="fl"><img src="/static/images/logo.png" class="logoImage"></a>
+                <div id="mod-search1">
+                    <div class="searchbox">
+                        <form action="http://demo.kyxscms.com/search.html" method="get">
+                            <div class="searchbox-inner">
+                                <input type="text" name="keyword" placeholder="找书" class="searchinput">
+                                <i class="search-icon"></i>
+                                <input type="submit" value="" class="searchbtn" style="background-color:#333333">
+                                <span class="loadIcon"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="mybookshelf fr">
+                    <i class="user"></i>
+                    <a href="/login">登录</a>
+                    <a href="/register">注册</a>
+                </div>
+                <a href="http://demo.kyxscms.com/user/bookshelf/index.html" class="mybookshelf fr"> <i></i>
+                    我的书架
+                </a>
+            </div>
+            <!--搜索部分 end-->
+            <!--导航 start-->
+        </div>
+    </div>
+    <div class="firstnav">
+        <ul>
+            <li class="curr">
+                <a href="/">首页</a>
+            </li>
+            <li>
+                <a href="http://demo.kyxscms.com/lists/4.html">男生</a>
+            </li>
+            <li>
+                <a href="http://demo.kyxscms.com/lists/8.html">女生</a>
+            </li>
+            <li>
+                <a href="http://demo.kyxscms.com/all.html">书库</a>
+            </li>
+            <li>
+                <a href="http://demo.kyxscms.com/lists/41.html">排行</a>
+            </li>
+            <li>
+                <a href="http://demo.kyxscms.com/lists/31.html">文章</a>
+            </li>
+        </ul>
+    </div>
+    <!--导航 end-->
+</div>
+{block name="main"}{/block}
+<div class="block20"></div>
+<div class="footer-box show" style="clear:both;">
+    <p class="channel-font">
+        <a target="_blank">友情连接：</a>
+        {volist name="links" id="vo"}
+        <a href="{$vo.url}" target="_blank">{$vo.name}</a>
+        {/volist}
+        <br>
+    </p>
+    <p class="footer-announce">
+        Copyright © 2011-2020 {$url} Rights Reserved. {$site_name} 版权所有
+    </p>
+    <div style="width:300px;margin:0 auto; padding:20px 0;">
+        <a target="_blank" href="#"
+           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;"></p>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="/static/js/jquery.mouseDelay.min.js"></script>
+<script type="text/javascript" src="/static/js/global.js"></script>
+<script type="text/javascript" src="/static/js/slide.js"></script>
+<script src="https://lib.baomitu.com/layer/3.1.1/layer.js"></script>
+<div class="to_top ui-toTop"></div>
+</body>
+</html>
